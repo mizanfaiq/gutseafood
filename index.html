@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guts'Sea Food – Rajanya Udang</title>
+<link rel="icon" href="assets/logo.png">
+<meta name="description" content="Seafood pre-order & take away: udang, lobster, cumi, ikan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- SPRITE SILUET: gambar siluet dipakai ulang lewat <use href="#id">.
+     Ganti bentuk dengan mengubah <path>. Warna mengikuti CSS (currentColor). -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="s-udang" viewBox="0 0 100 100"><path fill="currentColor" d="M80 20C60 8 30 18 22 44c-4 14 2 28 14 36l-4 10 16-6 8 8V76C44 70 38 58 44 48c6-10 18-14 30-10l16-4c4-6-2-12-10-14z"/><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" d="M88 24C94 14 98 8 96 2M84 22C88 14 90 8 88 2"/></symbol>
+  <symbol id="s-lobster" viewBox="0 0 100 100"><g fill="currentColor"><rect x="30" y="40" width="42" height="20" rx="10"/><path d="M70 42l22-12 4 20-4 20-22-12z"/><path d="M34 42L16 30C6 22 8 10 16 8c10 0 16 8 18 18l8 14zM34 58L16 70c-10 8-8 20 0 22 10 0 16-8 18-18l8-14z"/></g><path fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" d="M32 46C20 46 10 42 4 34M32 54C20 54 10 58 4 66M44 62l-4 12M54 62l-2 14M64 62v12"/></symbol>
+  <symbol id="s-cumi" viewBox="0 0 100 100"><path fill="currentColor" d="M50 2l16 22 12-6-6 20c0 10-6 18-14 22H42c-8-4-14-12-14-22l-6-20 12 6z"/><path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" d="M42 62C36 76 30 84 26 96M47 62C45 76 44 86 44 98M53 62C55 76 56 86 56 98M58 62C64 76 70 84 74 96"/></symbol>
+  <symbol id="s-ikan" viewBox="0 0 100 100"><path fill="currentColor" d="M4 50C24 24 54 24 72 40l24-18v56L72 60C54 76 24 76 4 50z"/><path fill="currentColor" d="M38 32l12-14 12 16zM44 70l8 14 8-12z"/></symbol>
+</defs></svg>
+
+<!-- NAVBAR: ubah teks brand / link menu di sini -->
+<nav><div class="wrap">
+  <a class="brand" href="#">Guts'Sea</a>
+  <ul>
+    <li><a href="#cara">Cara pesan</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#kontak">Kontak</a></li>
+  </ul>
+</div></nav>
+
+<!-- HERO: judul, tagline, tombol, dan logo berputar -->
+<header class="hero">
+  <!-- SILUET KECIL: ubah posisi (top/left/right/bottom), ukuran (--s), dan putaran (rotate) sesuka hati -->
+  <svg class="deco" style="top:10%;left:44%;transform:rotate(-20deg)" aria-hidden="true"><use href="#s-udang"/></svg><svg class="deco" style="bottom:6%;left:3%;--s:80px;transform:rotate(15deg)" aria-hidden="true"><use href="#s-cumi"/></svg><svg class="deco" style="top:8%;right:3%;--s:90px;transform:rotate(10deg)" aria-hidden="true"><use href="#s-ikan"/></svg>
+<div class="wrap">
+  <div>
+    <h1 id="h-brand">Guts'Sea Food</h1>
+    <p>Rajanya udang, lobster, cumi, dan ikan.</p>
+    <b><p>DIMASAK DADAKAN!!!</p></b>
+    <a class="btn" href="#menu">Lihat menu</a>
+    <a class="btn ghost" href="#cara">Cara pesan</a>
+  </div>
+  <!-- LOGO BERPUTAR: ganti file di assets/logo.png. Hentikan putaran dengan menghapus "animation" di CSS .badge -->
+  <img class="badge" src="assets/logo.png" alt="Logo Guts'Sea – Rajanya Udang">
+</div></header>
+
+<!-- CARA PESAN: edit teks langkah di dalam .rule -->
+<section id="cara">
+  <svg class="deco" style="top:20px;right:5%;transform:rotate(15deg)" aria-hidden="true"><use href="#s-ikan"/></svg><svg class="deco" style="bottom:16px;left:3%;transform:rotate(-25deg)" aria-hidden="true"><use href="#s-udang"/></svg><svg class="deco" style="bottom:10%;right:14%;--s:70px" aria-hidden="true"><use href="#s-cumi"/></svg>
+<div class="wrap">
+  <h2>Cara pesan</h2>
+  <p class="sub">Tidak melayani makan di tempat. Pesan melalui pre-order.</p>
+  <div class="rules">
+    <div class="rule"><b>1. Pilih menu</b>Pilih menu di bawah, lalu tambahkan ke keranjang.</div>
+    <div class="rule"><b>2. Kirim pesanan</b>Isi nama dan jadwal pengambilan pesanan melalui whatsapp atau DM Instagram kami.</div>
+    <div class="rule"><b>3. Ambil atau diantar</b>Pesanan dapat diambil atau diantar sesuai alamat yang kamu isi.</div>
+  </div>
+  <p class="notice" id="notice"></p>
+</div></section>
+
+<!-- MENU: tab & daftar dibuat otomatis oleh JavaScript dari objek MENU -->
+<section id="menu">
+  <svg class="deco" style="top:120px;right:-20px;--s:120px;transform:rotate(-15deg)" aria-hidden="true"><use href="#s-lobster"/></svg><svg class="deco" style="top:55%;right:4%;--s:80px" aria-hidden="true"><use href="#s-cumi"/></svg><svg class="deco" style="bottom:40px;right:20%;--s:90px;transform:rotate(8deg)" aria-hidden="true"><use href="#s-ikan"/></svg>
+<div class="wrap">
+  <h2>Menu</h2>
+  <div class="tabs" role="tablist" id="tabs"></div>
+  <div id="menu-list"></div>
+  <p class="notice" id="notice1"></p>
+</div></section>
+
+<!-- KONTAK: alamat, jam, sosmed, dan peta diisi dari CONFIG di JavaScript -->
+<section id="kontak">
+  <svg class="deco" style="top:30px;right:6%;transform:rotate(12deg)" aria-hidden="true"><use href="#s-udang"/></svg><svg class="deco" style="bottom:20px;left:5%;transform:rotate(-10deg)" aria-hidden="true"><use href="#s-ikan"/></svg><svg class="deco" style="bottom:30px;right:40%;--s:90px" aria-hidden="true"><use href="#s-lobster"/></svg>
+<div class="wrap">
+  <h2>Kontak dan lokasi</h2>
+  <p class="sub" id="addr"></p>
+  <div class="contact">
+    <div>
+      <p id="hours"></p>
+      <div class="socials" id="socials"></div>
+    </div>
+    <div class="map" id="map"></div>
+  </div>
+</div></section>
+
+<!-- FOOTER: teks diisi dari JavaScript -->
+<footer id="foot"></footer>
+
+<!-- TOMBOL KERANJANG MELAYANG: muncul otomatis jika ada item -->
+<div class="cartbar" id="cartbar"><button class="btn" id="open-cart"></button></div>
+
+<!-- POPUP PESANAN: form nama, tanggal, jam, catatan + tombol kirim WhatsApp -->
+<dialog id="dlg">
+  <h3>Pesananmu</h3>
+  <div id="lines"></div>
+  <label>Nama<input id="f-name" autocomplete="name"></label>
+  <div class="row">
+    <label>Tanggal<input id="f-date" type="date"></label>
+    <!-- JAM AMBIL/ANTAR: pilihan diisi otomatis dari CONFIG.slotJam di script.js -->
+    <label>Jam<select id="f-time"></select></label>
+  </div>
+  <!-- METODE: ambil sendiri atau diantar. Kolom alamat muncul otomatis jika memilih Antar -->
+  <fieldset class="metode">
+    <legend>Metode</legend>
+    <label class="opt"><input type="radio" name="metode" value="take away" checked> take away</label>
+    <label class="opt"><input type="radio" name="metode" value="delivery"> delivery</label>
+  </fieldset>
+  <div id="antar-box" hidden>
+    <label>Alamat pengantaran<textarea id="f-addr" rows="2"></textarea></label>
+    <p class="ongkir" id="ongkir-note"></p>
+  </div>
+  <label>Catatan (misal: level pedas)<textarea id="f-note" rows="2"></textarea></label>
+  <p class="err" id="err" role="alert"></p>
+  <!-- STATUS: muncul setelah tombol kirim ditekan, berisi link cadangan jika WhatsApp tidak terbuka otomatis -->
+  <p class="status" id="status" aria-live="polite" hidden></p>
+  <div class="actions">
+    <button class="btn" id="send">Kirim lewat WhatsApp</button>
+    <button class="btn ghost2" id="close">Tutup</button>
+  </div>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+/* WARNA TEMA: ubah variabel ini untuk mengganti warna seluruh website */
+:root{--red:#800000;--red-d:#8A0E15;--cream:#FBF5E6;--cream-d:#F1E7CF;--ink:#3A0B0E;--r:14px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:400 1rem/1.6 'DM Sans',system-ui,sans-serif;background:var(--cream);color:var(--ink)}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:900;line-height:1.05;color:var(--red)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+section{padding:64px 0}
+/* NAVBAR: menu atas yang menempel saat di-scroll */
+nav{position:sticky;top:0;z-index:20;background:var(--cream);border-bottom:2px solid var(--red)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{font:900 1.3rem 'Fraunces',serif;color:var(--red);text-decoration:none}
+nav ul{display:flex;gap:18px;list-style:none;padding:0;font-weight:500}
+nav a{text-decoration:none}
+nav ul a:hover{color:var(--red)}
+@media(max-width:560px){nav ul li:not(:last-child){display:none}}
+/* HERO: bagian pembuka berwarna merah + logo berputar (.badge) */
+.hero{background:var(--red);color:var(--cream);padding:56px 0 72px}
+.hero .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+.hero h1{color:var(--cream);font-size:clamp(2.6rem,8vw,5.2rem)}
+.hero p{max-width:34ch;margin:18px 0 26px;font-size:1.1rem}
+.btn{display:inline-block;border:2px solid var(--red);background:var(--red);color:var(--cream);padding:12px 24px;border-radius:99px;font:700 1rem 'DM Sans';cursor:pointer;text-decoration:none}
+.btn:hover{background:var(--red-d)}
+.hero .btn{background:var(--cream);color:var(--red);border-color:var(--cream)}
+.hero .btn.ghost{background:transparent;color:var(--cream);margin-left:8px}
+.badge{width:100%;max-width:340px;aspect-ratio:1;border-radius:50%;box-shadow:0 0 0 6px var(--cream);justify-self:center;animation:spin 40s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.badge{animation:none}}
+@media(max-width:700px){.hero .wrap{grid-template-columns:1fr}.badge{max-width:220px}}
+/* CARA PESAN: 3 kotak langkah + catatan pre-order */
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;margin-top:28px}
+.rule{border:2px solid var(--red);border-radius:var(--r);padding:18px}
+.rule b{display:block;font:900 1.15rem 'Fraunces',serif;color:var(--red);margin-bottom:4px}
+.notice{margin-top:22px;background:var(--cream-d);border-left:6px solid var(--red);padding:14px 18px;border-radius:0 var(--r) var(--r) 0}
+h2{font-size:clamp(2rem,5vw,3rem)}
+.sub{margin-top:8px;max-width:60ch}
+/* MENU: tab kategori, daftar item, tombol tambah/kurang */
+#menu{background:var(--cream-d)}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}
+.tab{border:2px solid var(--red);background:transparent;color:var(--red);padding:8px 20px;border-radius:99px;font:700 1rem 'DM Sans';cursor:pointer}
+.tab[aria-selected=true]{background:var(--red);color:var(--cream)}
+.group{margin-bottom:28px}
+.group h3{font-size:1.6rem;margin-bottom:6px;border-bottom:2px solid var(--red);padding-bottom:4px}
+.item{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px dashed #b5121b55}
+.item .n{flex:1}
+.price{font-weight:700;color:var(--red);white-space:nowrap}
+.price.soon{font-weight:500;font-style:italic;opacity:.75}
+.qty{display:flex;align-items:center;gap:8px}
+.qty button{width:32px;height:32px;border-radius:50%;border:2px solid var(--red);background:var(--cream);color:var(--red);font:700 1.1rem/1 'DM Sans';cursor:pointer}
+.qty button:hover{background:var(--red);color:var(--cream)}
+.qty span{min-width:18px;text-align:center;font-weight:700}
+/* KERANJANG: tombol melayang di bawah + popup form pesanan */
+.cartbar{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:30;display:none}
+.cartbar.on{display:block}
+.cartbar .btn{box-shadow:0 6px 20px #8a0e1566}
+dialog{overflow-y:auto;overscroll-behavior:contain;border:3px solid var(--red);border-radius:var(--r);background:var(--cream);color:var(--ink);padding:24px;width:min(480px,92vw);max-height:90vh}
+dialog::backdrop{background:#3a0b0e99}
+dialog h3{font-size:1.8rem;margin-bottom:12px}
+.line{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px dashed #b5121b55}
+label{display:block;margin-top:12px;font-weight:700;font-size:.9rem}
+input,textarea,select{width:100%;min-width:0;font:inherit;font-size:16px;padding:10px;border:2px solid var(--red);border-radius:10px;background:#fff;margin-top:4px;color:inherit}
+select{appearance:none;-webkit-appearance:none;padding-right:40px;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23800000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-items:end}
+.row>label{min-width:0;margin-top:12px}
+/* TANGGAL & JAM: tinggi, font, dan gaya dibuat sama persis di semua HP */
+input[type=date],select{-webkit-appearance:none;appearance:none;display:block;height:48px;min-height:48px;line-height:1.2;padding-top:0;padding-bottom:0}
+input[type=date]{padding-right:10px;text-align:left}
+input[type=date]::-webkit-date-and-time-value{text-align:left;min-height:1.2em;margin:0}
+input[type=date]::-webkit-datetime-edit{padding:0}
+input[type=date]::-webkit-calendar-picker-indicator{margin:0;padding:0;cursor:pointer}
+@media(max-width:420px){.row{grid-template-columns:1fr;gap:0}}
+.actions{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.btn.ghost2{background:transparent;color:var(--red)}
+.err{color:var(--red-d);font-weight:700;margin-top:10px;min-height:1.4em}
+/* KONTAK: tombol sosmed + peta */
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:28px;margin-top:28px}
+@media(max-width:760px){.contact{grid-template-columns:1fr}}
+.socials{display:flex;flex-direction:column;gap:10px;margin:16px 0}
+.socials a{display:block;padding:12px 18px;border:2px solid var(--red);border-radius:99px;text-decoration:none;font-weight:700;color:var(--red)}
+.socials a:hover{background:var(--red);color:var(--cream)}
+.map{border:3px solid var(--red);border-radius:var(--r);overflow:hidden;min-height:300px;background:var(--cream-d)}
+.map iframe{width:100%;height:100%;min-height:300px;border:0;display:block}
+footer{background:var(--red);color:var(--cream);text-align:center;padding:24px 20px;font-size:.9rem}
+/* SILUET DEKORASI
+   .deco = siluet kecil samar di background (atur posisi lewat style="top/left/right/bottom" di HTML)
+   .edge = siluet lebih jelas di ujung kiri setiap grup menu */
+section,.hero{position:relative;overflow:hidden}
+.wrap{position:relative;z-index:1}
+.deco{position:absolute;z-index:0;width:var(--s,100px);height:var(--s,100px);color:var(--red);opacity:.09;pointer-events:none}
+.hero .deco{color:var(--cream);opacity:.14}
+#menu .deco{opacity:.07}
+.group{position:relative}
+.group>*:not(.edge){position:relative;z-index:1}
+.edge{position:absolute;z-index:0;left:-34px;top:-8px;width:92px;height:92px;color:var(--red);opacity:.24;transform:rotate(-12deg);pointer-events:none}
+.group:nth-child(even) .edge{transform:rotate(10deg) scaleX(-1)}
+@media(max-width:700px){.edge{left:-24px;width:68px;height:68px;opacity:.17}}
+
+/* METODE AMBIL/ANTAR di popup pesanan */
+.metode{border:0;padding:0;margin-top:12px}
+.metode legend{font-weight:700;font-size:.9rem;padding:0}
+.opt{display:inline-block;margin:6px 18px 0 0;font-weight:500}
+.opt input{width:auto;margin:0 6px 0 0;accent-color:var(--red)}
+.ongkir{margin-top:8px;font-size:.9rem;font-style:italic;color:var(--red-d)}
+
+@media(max-width:480px){dialog{padding:18px}dialog h3{font-size:1.5rem}.actions .btn{flex:1;text-align:center}}
